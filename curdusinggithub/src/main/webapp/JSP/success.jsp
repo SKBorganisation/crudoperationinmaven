@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+    <%@ page import="com.model.User" %>
+    <%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +13,7 @@
 <body>
 <center>
 <form action="myform">
-<table>
+<table border="2">
 <tr>
 <td>ID</td>
 <td>FNAME</td>
@@ -22,17 +23,19 @@
 <td>USERNAME</td>
 <td>PASSWORD</td>
 </tr>
-<c:forEach items="${data }" var="u">
+<%List <User>list=(List<User>)request.getAttribute("data");
+for(User u:list)
+{%>
 <tr>
-<td>${u.uid }</td>
-<td>${u.fname }</td>
-<td>${u.lname }</td>
-<td>${u.mob }</td>
-<%-- <td>${u.login.role.rolename }</td>
-<td>${u.login.uname}</td>
-<td>${u.login.password }</td>
- --%></tr>
-</c:forEach>
+<td><%=u.getUid()  %></td>
+<td><%=u.getFname() %></td>
+<td><%=u.getLname() %></td>
+<td><%=u.getMob() %></td>
+<td><%=u.getLogin().getUname() %></td>
+<td><%=u.getLogin().getPassword() %></td>
+<td><%=u.getLogin().getRole().getRolename() %></td>
+ </tr>
+ <%} %>
 </table>
 </form>
 </center>
