@@ -1,5 +1,9 @@
 package com.daoi;
 
-public interface Logindaoi {
+import org.springframework.data.repository.CrudRepository;
+
+import com.model.Login;
+
+public interface Logindaoi extends CrudRepository<Login, Integer>{
 
 }

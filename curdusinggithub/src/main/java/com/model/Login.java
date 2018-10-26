@@ -12,18 +12,18 @@ public class Login {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private int loginid;
-private String username,password;
+private String uname,password;
 public int getLoginid() {
 	return loginid;
 }
 public void setLoginid(int loginid) {
 	this.loginid = loginid;
 }
-public String getUsername() {
-	return username;
+public String getUname() {
+	return uname;
 }
-public void setUsername(String username) {
-	this.username = username;
+public void setUname(String uname) {
+	this.uname = uname;
 }
 public String getPassword() {
 	return password;

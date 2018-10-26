@@ -10,11 +10,11 @@
 <center>
 <form action="registeruser">
 <label>Role:</label>
-<select name="rolename">Select Role
-<option value="admin">Admin</option>
-<option value="user">USER</option>
-<option value="manager">MANAGER</option>
-</select>
+<select name="roleid">Select Role
+<option value=1>ADMIN</option>
+<option value=2>USER</option>
+<option value=3>MANAGER</option>
+</select><br>
 <label>First Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="fname"><br><br>
 <label>Last Name:</label>
