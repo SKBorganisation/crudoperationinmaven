@@ -22,6 +22,7 @@
 <td>ROLE</td>
 <td>USERNAME</td>
 <td>PASSWORD</td>
+
 </tr>
 <%List <User>list=(List<User>)request.getAttribute("data");
 for(User u:list)
