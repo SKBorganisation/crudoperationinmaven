@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,5 +48,25 @@ public class Homecontroller
 	   	System.out.println("user registered...");
 	   	model.addAttribute("msg", "Registered successfully...");
 		return "login";
+	}
+	
+	@RequestMapping("/login")
+	public String login(@ModelAttribute User u,@ModelAttribute Login login,Model model )
+	{
+		System.out.println("on login user...");
+		System.out.println("username="+login.getUname()+"Password="+login.getPassword());
+		Login l= service.getlogin(login.getUname(), login.getPassword());
+		System.out.println("hi.."+l);
+		if(l!=null)
+		{
+			List<User>list=service.getAlldata();
+			System.out.println("List"+list);
+			model.addAttribute("data", list);
+		 	return "success";
+		}
+		else
+		{ 
+			return "login";
+		}
 	}
 }
